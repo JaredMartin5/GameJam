@@ -16,7 +16,7 @@ public class damage : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.name == "CratePink")
+        if (col.gameObject.name == "CratePink")
         {
             //health -= 5;
             //print(health);
@@ -38,7 +38,7 @@ public class damage : MonoBehaviour
                 }
                 Destroy(col.gameObject);
 
-            }
+            } 
 
 
             print(health);
