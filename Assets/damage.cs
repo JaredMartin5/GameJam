@@ -18,8 +18,9 @@ public class damage : MonoBehaviour
     {
         if(col.gameObject.name == "CratePink")
         {
-            health -= 5;
-            print(health);
+            //health -= 5;
+            //print(health);
+            Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
         }
 
         if (col.gameObject.name == "CrateGreen")
