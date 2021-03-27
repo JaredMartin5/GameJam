@@ -14,11 +14,32 @@ public class damage : MonoBehaviour
             Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
         }
     }
-    void OnCollisionEnter2D(Collision2D coll)
+    void OnCollisionEnter2D(Collision2D col)
     {
-        if(coll.gameObject.name == "CratePink")
+        if(col.gameObject.name == "CratePink")
         {
             health -= 5;
+            print(health);
+        }
+
+        if (col.gameObject.name == "CrateGreen")
+        {
+            
+            if (health < 100 )
+            {
+                if (health > 75)
+                {
+                    health = 100;
+                }
+                else
+                {
+                    health += 25;
+                }
+                Destroy(col.gameObject);
+
+            }
+
+
             print(health);
         }
 
