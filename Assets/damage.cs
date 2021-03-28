@@ -36,10 +36,18 @@ public class damage : MonoBehaviour
                 {
                     health += 25;
                 }
-                Destroy(col.gameObject);
+                
 
-            } 
+            }
 
+            Destroy(col.gameObject);
+            print(health);
+        }
+
+        if (col.gameObject.name == "CrateRed")
+        {
+            health -= 25;
+            Destroy(col.gameObject);
 
             print(health);
         }
