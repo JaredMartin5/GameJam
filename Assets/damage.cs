@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class damage : MonoBehaviour
 {
     public int health = 100;
+    public AudioSource audioSource;
 
     void Update ()
     {
@@ -46,6 +47,8 @@ public class damage : MonoBehaviour
 
         if (col.gameObject.name == "CrateRed")
         {
+            // play sound
+            audioSource.Play();
             health -= 25;
             Destroy(col.gameObject);
 
