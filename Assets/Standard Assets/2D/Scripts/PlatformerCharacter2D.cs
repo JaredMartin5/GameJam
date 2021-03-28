@@ -20,6 +20,9 @@ namespace UnityStandardAssets._2D
         private Animator m_Anim;            // Reference to the player's animator component.
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+        Vector2 moveForward;
+        bool canGoForward = true;
+        bool canGoOtherDirection;
 
         private void Awake()
         {
@@ -52,6 +55,15 @@ namespace UnityStandardAssets._2D
 
         public void Move(float move, bool crouch, bool jump)
         {
+
+
+            if (canGoForward)
+            {
+                moveForward = gameObject.transform.position;    //When the game starts it will start to go to the right
+                moveForward.x += 0.15f;
+                gameObject.transform.position = moveForward;
+            }
+
             // If crouching, check to see if the character can stand up
             if (!crouch && m_Anim.GetBool("Crouch"))
             {
@@ -104,7 +116,8 @@ namespace UnityStandardAssets._2D
         private void Flip()
         {
             // Switch the way the player is labelled as facing.
-           
+
         }
-    }
+
+}
 }
